@@ -1,4 +1,4 @@
-package main
+package p
 
 import (
 	"fmt"
@@ -9,8 +9,8 @@ import (
 	"time"
 )
 
-func main() {
-	response, _ := http.Get("https://alistairfink.com/alistairfink/api/abouts")
+func HealthCheck(w http.ResponseWriter, r *http.Request) {
+	response, _ := http.Get("https://alistairfink.com/alistairfink/api/about")
 
 	if response.StatusCode != 200 {
 		layout := "January 2, 2006 at 3:04pm (ET)"
@@ -35,14 +35,5 @@ func main() {
 		}
 	}
 
-}
-
-func HelloWorld(w http.ResponseWriter, r *http.Request) {
-	response, _ := http.Get("https://alistairfink.com/alistairfink/api/abouts")
-
-	if response.StatusCode != 200 {
-
-	}
-
-	fmt.Fprint(w, response.StatusCode == 404)
+	fmt.Fprint(w, "Health Check Completed")
 }
