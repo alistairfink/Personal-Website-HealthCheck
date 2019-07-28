@@ -1,2 +1,2 @@
 # Personal Website HealthCheck
-Health check for my personal website. Pings the about api and checks status code. If the status code is not 200 then I get an email telling me that my server is probably donw.
+Health check for my personal website. Pings the about api and checks status code. If the status code is not 200 then I get an email telling me that my server is probably down. This health check runs hourly using Google Cloud Functions.
